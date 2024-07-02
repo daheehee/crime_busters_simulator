@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+.content {
+  max-width: 1500px;
+  margin: auto;
+}
+
+h1{
+  text-align: center;
+  font-family: "Abril Fatface";
+  font-size: 40px;
+}
+h2{
+  text-align: center;
+  font-family: "Abril Fatface";
+}
+p{
+  text-align: center;
+  font-family: "Kumbh Sans";
+}
+
+input[type="text"] {
+             display: block;
+             margin : 0 auto;
+        }
+
+body.powder {
+background-color:#faebeb; 
+}
+
+body.liquid {
+background-color:#bbfccc; 
+}
+
+body.metal {
+background-color:#bbebfc; 
+}
+
+
+
+.center{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: auto;
+}
+
+img{
+opacity: 0.5;
+}
+
+img.hello:hover,
+img.hello:focus {
+	opacity: 1;
+}
+
+#img_cont { 
+  display: table;
+  width: 93%;
+}
+#img_cont a {
+  display: table-cell;
+  text-align: center;
+}
+
+
+#img_cont2 {
+  display: table;
+  width: 100%;
+}
+#img_cont2 a {
+  display: table-cell;
+  text-align: center;
+}
+
+.container1 {
+  background-color:#99ffcc;
+  border: 3px solid black;
+  color: black;
+  padding: 15px 32px;
+  font-family:"Kumbh Sans";
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+
+}
+
+.container2 {
+  background-color:#99ffcc;
+  border: 3px solid black;
+  color: black;
+  padding: 15px 32px;
+  font-family:"Kumbh Sans";
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+
+}
+.container:hover {
+  background-color: white;
+  color: #99ffcc;
+}
