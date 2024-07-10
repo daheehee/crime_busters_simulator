@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" 
+          content="IE=edge"> 
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0"> 
+    <title>Design Stopwatch using HTML CSS and JavaScript</title> 
+    <link rel="stylesheet" href="style.css"> 
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body class="powder">
+<div class="content">
+<h1>Powder</h1>
+<a href="index.html">
+<h2>back</h2></a>
+
+
+
+<p>What will you be doing?</p>
+
+<p class= "timer" id="time"> 
+            <span class="digit" id="hr"> 00</span> 
+            <span class="txt">Hr</span> 
+            <span class="digit" id="min"> 00</span> 
+            <span class="txt">Min</span> 
+            <span class="digit" id="sec"> 00</span> 
+            <span class="txt">Sec</span> 
+            <span class="digit" id="count"> 00</span> 
+        </p> 
+<div style="text-align:center">
+<button class="btn" id="start"> Start</button> 
+<button class="btn" id="stop"> Pause</button> 
+<button class="btn" id="reset"> Reset</button> 
+</div>
+
+<div id="img_cont2">
+<a href="iodine.html">
+<img class="hello" src="https://lh3.googleusercontent.com/1EZnSch9FO0T4NEZzF35X0Cy4jTW1yumpS3J28YweehUeGt3OIZw5kt4m-TO_DNyCKU9mqcrSUDV7FqOLXiM-7SiLAPYs9oYdc_ktJlrxIA5ZuDWeMAuvqX0kMxeA2rJImLZRtfaTA=w2400" title="iodine" style="width:290px;height:270px;" /></a>
+<a href="acid.html">
+<img class="hello" src="https://lh3.googleusercontent.com/QWgcDSDOMkBSSOmBHHK8asu6BIdQ12kV7VCK4M6Ws5waDd35erceK01kkJ2wiJcpxqJXb-caVRr-9yxpNDiccY-nnml7nvTBZFl-Ln6CoFR4ipwfgTVqcuSNizW5n9Ytqm-rGsSbew=w2400" title="HCl" /></a>
+<a href="water.html">
+<img class="hello" src="https://lh3.googleusercontent.com/kh0c5lcwQRqspBpVfjOeOvBoEhuYkIxaAWUDZkFLFZdW8AJmJjuYJ4AyuzaER7ndsifR3oabAcqIvJE9-xVi6wnEUDCBJ9BSucX7wXCbiENsyJ9MKnquNqDjpJ92qH1Q2Acx1kAP8g=w2400" title="Water" /></a>
+<a href="ph.html">
+<img class="hello" src="https://lh3.googleusercontent.com/fOhTsaX3YDFnzoPX6ZaJ4sR1wfKFXcLO0tBLvZjskHfQlaQOKJrjDx7NJD3jri7XosheFCaU5HqtsmvgCXbgn9x5pgixsxmhOxDAspQ_O4bZuVs2TThacSxWQemdi1QAbDVECnRoPw=w2400" title="ph" style="width:160px"/></a>
+<a href="analyze.html">
+<img class="hello" src="https://lh3.googleusercontent.com/5_7X1st-VXUcbI_5wHGRuQzs1W8VnNpQ8KpxiPq-qJDiyv56Fump8EcKy04P5CpUKCUgPANGLH6YHCytwkdAYeKw3kqFmn-eV2yIR1cFFXhYpAWOYUX_IUPgOi94md7F32wFVNsJVw=w2400" title="analyze" style="width:300px;height:250px;" ></a>
+</div>
+
+<button class="container1" onclick="makeNumberP()" >Click me to generate a powder </button>
+
+<p>Put your answer:</p>
+<input type="text" id="guess"><br>
+
+<p class="guess"> </p>
+<p class="answer"> </p><br>
+
+<div style="text-align:center">
+<button onclick="check()" class="container2">Click to check!</button>
+<button onclick="answer()" class="container2">Click for answer!</button>
+</div>
+
+<script src="script.js"></script>
+<script>window.onload = initilizeTime();</script>
+</div>
+</body>
+</html>
