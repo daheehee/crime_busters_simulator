@@ -7,14 +7,20 @@
 }
 
 h1{
-  text-align: center;
   font-family: "Abril Fatface";
   font-size: 40px;
 }
+
 h2{
   text-align: center;
   font-family: "Abril Fatface";
 }
+
+h3{
+text-align: center;
+  font-family: "Abril Fatface";
+}
+
 p{
   text-align: center;
   font-family: "Kumbh Sans";
@@ -123,6 +129,10 @@ img.hello:focus {
   margin-bottom: 15px;
   font-weight: 300;
 
+}
+
+.btn:hover{
+ background-color: white;
 }
 
 .container1:hover {

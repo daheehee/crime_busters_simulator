@@ -1,3 +1,7 @@
+function setPoint(){
+	localStorage.points = 0;
+}
+
 
 function makeNumberP() { //generates random number for samples and stores it in y
 	var minNumber = 1; 
@@ -362,79 +366,79 @@ var sample;
 var x= localStorage.getItem("y");
 switch (x) {
   case "1":
-    sample = "Sodium Acetate";
+    sample = "sodium acetate";
     break;
   case "2":
-    sample = "Sand";
+    sample = "sand";
     break;
   case "3":
-    sample = "Calcium Carbonate";
+    sample = "calcium carbonate";
     break;
   case "4":
-    sample = "Vitamin C";
+    sample = "vitamin c";
     break;
   case "5":
-    sample = "Salt";
+    sample = "salt";
     break;
   case  "6":
-    sample = "Sugar";
+    sample = "sugar";
     break;
      case "7":
-    sample = "Flour";
+    sample = "flour";
     break;
      case "8":
-    sample = "Cornstarch";
+    sample = "cornstarch";
     break;
      case "9":
-    sample = "Gelatin";
+    sample = "gelatin";
     break;
      case "10":
-    sample = "Alka-Seltzer";
+    sample = "alka-seltzer";
     break;
      case "11":
-    sample = "Yeast";
+    sample = "yeast";
     break;
      case "12":
-    sample = "Baking Soda";
+    sample = "baking soda";
     break;
      case "13":
-    sample = "Calcium Sulfate";
+    sample = "calcium sulfate";
     break;
      case "14":
-    sample = "Water";
+    sample = "water";
     break;
      case "15":
-    sample = "Hydrogen Peroxide";
+    sample = "hydrogen peroxide";
     break;
     case "16":
-    sample = "Vinegar";
+    sample = "vinegar";
     break;
     case "17":
-    sample = "Lemon Juice";
+    sample = "lemon juice";
     break;
     case "18":
-    sample = "Ammonia";
+    sample = "ammonia";
     break;
     case "19":
-    sample = "Rubbing Alcohol";
+    sample = "rubbing alcohol";
     break;
     case "20":
-    sample = "Copper";
+    sample = "copper";
     break;
     case "21":
-    sample = "Zinc";
+    sample = "zinc";
     break;
     case "22":
-    sample = "Tin";
+    sample = "tin";
     break;
     case "23":
-    sample = "Aluminum";
+    sample = "aluminum";
     break;
     case "24":
-    sample = "Iron";
+    sample = "iron";
     break;
     case "25":
-    sample = "Magnesium";
+    sample = "magnesium";
     
 }
 
@@ -446,102 +450,126 @@ h[0].style.display="block";
 
 
 
-function check(){ //checks guess
+function check(){ //checks guess and evaluates if the guess is correct, changing points
 var sample;
 var x= localStorage.getItem("y");
 switch (x) {
   case "1":
-    sample = "Sodium Acetate";
+    sample = "sodium acetate";
     break;
   case "2":
-    sample = "Sand";
+    sample = "sand";
     break;
   case "3":
-    sample = "Calcium Carbonate";
+    sample = "calcium carbonate";
     break;
   case "4":
-    sample = "Vitamin C";
+    sample = "vitamin c";
     break;
   case "5":
-    sample = "Salt";
+    sample = "salt";
     break;
   case  "6":
-    sample = "Sugar";
+    sample = "sugar";
     break;
      case "7":
-    sample = "Flour";
+    sample = "flour";
     break;
      case "8":
-    sample = "Cornstarch";
+    sample = "cornstarch";
     break;
      case "9":
-    sample = "Gelatin";
+    sample = "gelatin";
     break;
      case "10":
-    sample = "Alka-Seltzer";
+    sample = "alka-seltzer";
     break;
      case "11":
-    sample = "Yeast";
+    sample = "yeast";
     break;
      case "12":
-    sample = "Baking Soda";
+    sample = "baking soda";
     break;
      case "13":
-    sample = "Calcium Sulfate";
+    sample = "calcium sulfate";
     break;
      case "14":
-    sample = "Water";
+    sample = "water";
     break;
      case "15":
-    sample = "Hydrogen Peroxide";
+    sample = "hydrogen peroxide";
     break;
     case "16":
-    sample = "Vinegar";
+    sample = "vinegar";
     break;
     case "17":
-    sample = "Lemon Juice";
+    sample = "lemon juice";
     break;
     case "18":
-    sample = "Ammonia";
+    sample = "ammonia";
     break;
     case "19":
-    sample = "Rubbing Alcohol";
+    sample = "rubbing alcohol";
     break;
     case "20":
-    sample = "Copper";
+    sample = "copper";
     break;
     case "21":
-    sample = "Zinc";
+    sample = "zinc";
     break;
     case "22":
-    sample = "Tin";
+    sample = "tin";
     break;
     case "23":
-    sample = "Aluminum";
+    sample = "aluminum";
     break;
     case "24":
-    sample = "Iron";
+    sample = "iron";
     break;
     case "25":
-    sample = "Magnesium";
+    sample = "magnesium";
     
 }
 
+var points = localStorage.getItem("points");
 var h = document.getElementById("guess").value;
-if (sample==h){
-var g = document.getElementsByClassName("guess");
-g[0].innerHTML = "Right answer!";
-g[0].style.display="block";
-	 setTimeout(hides, 800);
+
+if (sample == h){
+	var g = document.getElementsByClassName("guess");
+	var p = document.getElementsByClassName("points");
+	
+	localStorage.points = parseInt(points) + 1;
+	points = parseInt(points) + 1;
+	
+	g[0].innerHTML = "Right answer! New sample generating.";
+	g[0].style.display="block";
+	setTimeout(hides, 800);
+	p[0].innerHTML = "points : " + points;
+	pauseTimer();
+	setTimeout(function(){ if (0 <= x && x <= 13){
+	makeNumberP();
+	}
+	else if(13 <= x && x <= 19){
+	makeNumberL();
+	}
+	else {
+	makeNumberM();
+	}}, 800);
+	setTimeout(function(){ startTimer();}, 800);
 }
 else{
-var g = document.getElementsByClassName("guess");
-g[0].innerHTML = "Try again!";
-g[0].style.display="block";
-	 setTimeout(hides, 800);
+	var g = document.getElementsByClassName("guess");
+	g[0].innerHTML = "Try again!";
+	g[0].style.display="block";
+	setTimeout(hides, 800);
 }
 }
 
+function pointUpdate(){ //makes sure the points are consistent through webpage refreshes 
+	var points = localStorage.getItem("points");
+	var p = document.getElementsByClassName("points");
+	p[0].innerHTML = "points : " + points;
+}
 
 function smell(){ //generates answer based on storage of y
 var scent;
@@ -635,31 +663,38 @@ h[0].style.display="none";
 g[0].style.display="none";
 }
 
-let startBtn = document.getElementById('start'); 
-let stopBtn = document.getElementById('stop'); 
-let resetBtn = document.getElementById('reset'); 
 
-startBtn.addEventListener('click', function () { 
-	timer = true; 
-}); 
+var timer; 
 
-stopBtn.addEventListener('click', function () { 
+function startTimer() { 
+	var hour = localStorage.getItem("hr");
+	var minute = localStorage.getItem("min");
+	var second = localStorage.getItem("sec");
+	var count = localStorage.getItem("count");
+	timer = true;
+	stopWatch(count, second, minute, hour);
+}; 
+
+function pauseTimer() { 
 	timer = false; 
-}); 
+}; 
 
-resetBtn.addEventListener('click', function () { 
+function resetTimer() { 
 	timer = false; 
-	hour = 0; 
-	minute = 0; 
-	second = 0; 
-	count = 0; 
-	document.getElementById('hr').innerHTML = "00"; 
-	document.getElementById('min').innerHTML = "00"; 
-	document.getElementById('sec').innerHTML = "00"; 
-	document.getElementById('count').innerHTML = "00"; 
-}); 
+	localStorage.hr=0;
+	localStorage.min=0; 
+	localStorage.sec=0; 
+	localStorage.count=0; 
+	var hour = localStorage.getItem("hr");
+	var minute = localStorage.getItem("min");
+	var second = localStorage.getItem("sec");
+	var count = localStorage.getItem("count");
+	timer = true;
+	stopWatch(count, second, minute, hour);
+}; 
 
 function startTime() { 
+	timer = true;
 	localStorage.hr=0;
 	localStorage.min=0; 
 	localStorage.sec=0; 
@@ -672,11 +707,12 @@ var hour = localStorage.getItem("hr");
 var minute = localStorage.getItem("min");
 var second = localStorage.getItem("sec");
 var count = localStorage.getItem("count");
+timer = true;
 	stopWatch(count, second, minute, hour);
 }
 
 function stopWatch(count, second, minute, hour) { 
-	if (true) { 
+	if (timer) { 
 		count++; 
 
 		if (count == 100) { 
